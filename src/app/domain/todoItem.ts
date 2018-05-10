@@ -3,4 +3,5 @@ export class TodoItem {
   label: string;
   done: boolean;
   creationDate: Date;
+  modifyDate?: Date;
 }

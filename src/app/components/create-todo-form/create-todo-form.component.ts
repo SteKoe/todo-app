@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {TodoItem} from "../../domain/todoItem";
 import {TodoItemFactory} from "../../factory/todoItem.factory";
-import {TodoItemService} from "../../services/todoItem.service";
+import {TodoItemStore} from "../../services/todoItem.service";
 
 @Component({
   selector: 'app-create-todo-form',
@@ -16,9 +16,11 @@ export class CreateTodoFormComponent {
     Validators.required
   ]);
 
-  constructor(private todoItemService : TodoItemService) {}
+  constructor(private todoItemService : TodoItemStore) {}
 
   createTodoItem() {
-    this.todoItemService.save(this.todoItem);
+    this.todoItem.creationDate = new Date();
+    this.todoItemService.addTodoItem(this.todoItem);
+    this.todoItem = TodoItemFactory.create();
   }
 }

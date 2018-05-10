@@ -1,6 +1,6 @@
 <mat-card>
-  <mat-selection-list [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)">
-    <mat-list-option *ngFor="let todoItem of todoItems" [value]="todoItem.id">
+  <mat-selection-list>
+    <mat-list-option *ngFor="let todoItem of todoItemStore.todos | async" [value]="todoItem.id" (click)="toggle(todoItem)" [selected]="todoItem.done">
       {{todoItem.label}}
     </mat-list-option>
   </mat-selection-list>

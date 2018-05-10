@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {TodoItem} from "../../domain/todoItem";
+import {TodoItemStore} from "../../services/todoItem.service";
 
 @Component({
   selector: 'app-todo-list',
@@ -8,10 +9,10 @@ import {TodoItem} from "../../domain/todoItem";
 })
 export class TodoListComponent {
 
-  @Input()
-  todoItems: TodoItem[];
+  constructor(private todoItemStore : TodoItemStore){}
 
-  onNgModelChange(em: any): void {
-    console.log(em);
+  toggle(todoItem : TodoItem): void {
+    todoItem.done = !todoItem.done;
+    this.todoItemStore.update(todoItem);
   }
 }
