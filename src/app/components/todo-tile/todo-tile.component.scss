@@ -13,19 +13,6 @@
   background-position: 0 2px;
 }
 
-.header {
-  display: flex;
-}
-
-.header__title {
-  margin-top: -10px;
-  margin-bottom: 0.9em;
-  flex: 1 1 0;
-}
-
-.header__date {
-  font-style: italic;
-  font-size: .8rem;
-  color: #6d6d6d;
-  text-shadow: 1px 1px 2px #aeaeae;
+.description {
+  margin-bottom: 1.5rem;
 }

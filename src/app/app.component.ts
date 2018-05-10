@@ -12,13 +12,6 @@ export class AppComponent {
   todos : Todo[] = new Array(0);
 
   constructor(todoService: TodoService, todoFactory: TodoFactory) {
-    this.todos.push(
-      TodoFactory.create(),
-      TodoFactory.create(),
-      TodoFactory.create(),
-      TodoFactory.create(),
-      TodoFactory.create(),
-      TodoFactory.create()
-    );
+    this.todos = todoService.findAll();
   }
 }

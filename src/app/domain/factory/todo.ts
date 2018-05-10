@@ -1,13 +1,38 @@
-import {Todo} from "../todo";
+import { v4 as uuid } from 'uuid';
+import {Todo, TodoItem} from "../todo";
 import {Injectable} from "@angular/core";
 
 @Injectable()
 export class TodoFactory {
   static create(): Todo {
     return {
+      id: `todo/${uuid()}`,
       title: "This is a very important title",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac blandit odio. Aliquam erat volutpat. Nulla sit amet mauris convallis, vulputate ligula et, efficitur odio. Fusce tincidunt maximus ante, nec tristique lectus posuere nec. Cras venenatis dolor eget purus interdum posuere. Aliquam sed tempor massa, vel pharetra quam. Etiam vitae diam luctus, suscipit felis eget, gravida libero. Ut finibus, diam vitae convallis tincidunt, augue magna fermentum ligula, at vehicula magna lacus in est. Integer ante tellus, scelerisque sit amet suscipit in, blandit ac magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id iaculis diam, quis congue purus. Vivamus placerat accumsan ullamcorper. Nam lacinia congue tristique. In sagittis risus et auctor mattis. Mauris eu turpis vitae mauris vulputate accumsan. Praesent ante lorem, venenatis sit amet nibh quis, accumsan sodales dui.",
-      creationDate: new Date()
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac blandit odio. Aliquam erat volutpat. Nulla sit amet mauris convallis, vulputate ligula et, efficitur odio. Fusce tincidunt maximus ante, nec tristique lectus posuere nec. ",
+      creationDate: new Date(),
+      todoItems: [
+        TodoItemFactory.create(),
+        TodoItemFactory.create(),
+        TodoItemFactory.create(),
+        TodoItemFactory.create(),
+        TodoItemFactory.create(),
+        TodoItemFactory.create(),
+        TodoItemFactory.create(),
+        TodoItemFactory.create()
+      ]
     }
+  }
+}
+
+class TodoItemFactory {
+  static create(): TodoItem {
+    return {
+      label: "Awesome label",
+      done: TodoItemFactory.randomBool()
+    }
+  }
+
+  static randomBool() {
+    return Math.floor(Math.random() * 999) % 2 === 0;
   }
 }

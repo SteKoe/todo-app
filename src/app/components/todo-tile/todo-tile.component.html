@@ -1,6 +1,5 @@
-<header class="header">
-  <h2 *ngIf="todo.title" class="header__title">{{todo.title}}</h2>
-  <span class="header__date">{{todo.creationDate | date:'fullDate'}}</span>
-</header>
+<app-todo-tile-header [todo]="todo"></app-todo-tile-header>
 
-{{todo.content}}
+<div *ngIf="todo.description" class="description">{{todo.description}}</div>
+
+<app-todo-tile-todoitem *ngFor="let todoItem of todo.todoItems" [todoItem]="todoItem" (onChange)="saveChange()"></app-todo-tile-todoitem>
