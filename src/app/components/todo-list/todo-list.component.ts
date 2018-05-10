@@ -9,7 +9,7 @@ import {TodoItemStore} from "../../services/todoItem.service";
 })
 export class TodoListComponent {
 
-  constructor(private todoItemStore : TodoItemStore){}
+  constructor(public todoItemStore : TodoItemStore){}
 
   toggle(todoItem : TodoItem): void {
     todoItem.done = !todoItem.done;
