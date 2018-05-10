@@ -3,29 +3,38 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TodoTileComponent} from './components/todo-tile/todo-tile.component';
-import {TodoFactory} from "./domain/factory/todo";
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import {
+  MatButtonModule, MatCardModule,
+  MatCheckboxModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule
+} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { TodoTileHeaderComponent } from './components/todo-tile/todo-tile-header/todo-tile-header.component';
-import { TodoTileTodoitemComponent } from './components/todo-tile/todo-tile-todoitem/todo-tile-todoitem.component';
+import {OverlayModule} from "@angular/cdk/overlay";
+import {TodoListComponent} from './components/todo-list/todo-list.component';
+import {CreateTodoFormComponent} from './components/create-todo-form/create-todo-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoTileComponent,
-    TodoTileHeaderComponent,
-    TodoTileTodoitemComponent
+    TodoListComponent,
+    CreateTodoFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
+    MatCardModule,
     MatCheckboxModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    TodoFactory
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    OverlayModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent]
 })

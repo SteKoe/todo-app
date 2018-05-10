@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {TodoService} from "./services/todo.service";
-import {Todo} from "./domain/todo";
-import {TodoFactory} from "./domain/factory/todo";
+import {Component, EventEmitter} from '@angular/core';
+import {TodoItemService} from "./services/todoItem.service";
+import {TodoItem} from "./domain/todoItem";
+import {MatSelectionListChange} from "@angular/material";
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import {TodoFactory} from "./domain/factory/todo";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  todos : Todo[] = new Array(0);
+  todoItems: TodoItem[] = new Array(0);
 
-  constructor(todoService: TodoService, todoFactory: TodoFactory) {
-    this.todos = todoService.findAll();
+  constructor(todoItemService: TodoItemService) {
+    this.todoItems = todoItemService.findAll();
   }
 }

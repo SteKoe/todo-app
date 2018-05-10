@@ -1,0 +1,13 @@
+<mat-card>
+  <form class="form" #todoItemForm="ngForm" (ngSubmit)="createTodoItem()">
+    <mat-form-field class="todo-input">
+      <input matInput placeholder="I have to..." name="label" [(ngModel)]="todoItem.label" required>
+      <mat-error *ngIf="todoItemFormControl.hasError('required')">
+        This field is mandatory!
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-mini-fab class="todo-add-button" [disabled]="!todoItemForm.form.valid">
+      <mat-icon>add</mat-icon>
+    </button>
+  </form>
+</mat-card>

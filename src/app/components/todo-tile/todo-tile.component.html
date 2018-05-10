@@ -1,5 +1,0 @@
-<app-todo-tile-header [todo]="todo"></app-todo-tile-header>
-
-<div *ngIf="todo.description" class="description">{{todo.description}}</div>
-
-<app-todo-tile-todoitem *ngFor="let todoItem of todo.todoItems" [todoItem]="todoItem" (onChange)="saveChange()"></app-todo-tile-todoitem>

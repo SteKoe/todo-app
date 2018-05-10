@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoTileComponent } from './todo-tile.component';
+import { CreateTodoFormComponent } from './create-todo-form.component';
 
-describe('TodoTileComponent', () => {
-  let component: TodoTileComponent;
-  let fixture: ComponentFixture<TodoTileComponent>;
+describe('CreateTodoFormComponent', () => {
+  let component: CreateTodoFormComponent;
+  let fixture: ComponentFixture<CreateTodoFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoTileComponent ]
+      declarations: [ CreateTodoFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoTileComponent);
+    fixture = TestBed.createComponent(CreateTodoFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

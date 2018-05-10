@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-selection-list [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)">
+    <mat-list-option *ngFor="let todoItem of todoItems" [value]="todoItem.id">
+      {{todoItem.label}}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-card>
