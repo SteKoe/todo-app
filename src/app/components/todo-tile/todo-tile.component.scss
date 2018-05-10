@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  line-height: 1.6;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 0 6px #e0e0e0;
+  background-image: url('../../../assets/linedpaper.png');
+  background-position: 0 2px;
+}
+
+.header {
+  display: flex;
+}
+
+.header__title {
+  margin-top: -10px;
+  margin-bottom: 0.9em;
+  flex: 1 1 0;
+}
+
+.header__date {
+  font-style: italic;
+  font-size: .8rem;
+  color: #6d6d6d;
+  text-shadow: 1px 1px 2px #aeaeae;
+}
