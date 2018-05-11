@@ -1,7 +1,4 @@
-import {Component, EventEmitter} from '@angular/core';
-import {TodoItemStore} from "./services/todoItem.service";
-import {TodoItem} from "./domain/todoItem";
-import {MatSelectionListChange} from "@angular/material";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',

@@ -91,4 +91,12 @@ export class TodoItemStore {
 
     return obs;
   }
+
+  clearAll() {
+    localStorage.clear();
+
+    this._todos.getValue().length = 0;
+
+    return of(this._todos.getValue());
+  }
 }
